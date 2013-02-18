@@ -17,7 +17,7 @@ class Yaff {
 	 */
 	public function __construct() {
 		global $y;
-		if (isset($y['base_urls']) && $y['base_urls']) {
+		if (isset($y['base_url']) && $y['base_url']) {
 			$this->apply_default_settings();
 
 			if ($_SERVER['REQUEST_URI'] != $_SERVER['PHP_SELF'])
@@ -41,7 +41,7 @@ class Yaff {
 
 			include(THEMES_DIR . $y['theme'] . '/' . $y['page_template'] . '.php');
 		} else {
-			die('\'base_urls\' value does not exist. Please add the desired URL of your installation in \'settings.php\'');
+			die('\'base_url\' value does not exist. Please add the desired URL of your installation in \'settings.php\'');
 		}
 	}
 	
@@ -85,7 +85,7 @@ class Yaff {
 	}
 
 	/**
-	 * Ensures that the 3 required options (site_title, base_urls and theme) are
+	 * Ensures that the 3 required options (site_title, base_url and theme) are
 	 * never left blank by adding default values if this is the case.
 	 *
 	 * @since 0.1
@@ -101,7 +101,7 @@ class Yaff {
 				$y[$field] = $value;
 			}
 		}
-		$y['theme_url'] = $y['base_urls'] . 'themes/' . $y['theme'];
+		$y['theme_url'] = $y['base_url'] . 'themes/' . $y['theme'];
 	}
 	
 }
