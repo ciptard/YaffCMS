@@ -23,7 +23,7 @@ class Yaff {
 			if ($_SERVER['REQUEST_URI'] != $_SERVER['PHP_SELF'])
 				$url = trim(preg_replace('/' . str_replace('/', '\/', str_replace('index.php', '', $_SERVER['PHP_SELF'])) . '/', '', $_SERVER['REQUEST_URI'], 1), '/');
 
-			$file = ($url ? strtolower(PAGES_DIR . $url) : PAGES_DIR . 'index');
+			$file = ($url ? PAGES_DIR . $url : PAGES_DIR . 'index');
 
 			is_dir($file) ? $file = PAGES_DIR . $url . '/index.md' : $file .= '.md';
 
