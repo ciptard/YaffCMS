@@ -191,7 +191,7 @@ td, td img {
 /* Structure */
 
 #container {
-	max-width: 960px;
+	max-width: 760px;
 	margin: 0 auto;
 }
 
@@ -210,7 +210,7 @@ td, td img {
 	color: #888888;
 }
 
-@media (max-width : 960px) {
+@media (max-width : 760px) {
 
 	body {
 		margin: 1.8em;
