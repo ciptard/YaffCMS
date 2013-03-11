@@ -43,6 +43,7 @@ class Yaff {
 		} else {
 			die('\'base_url\' value does not exist. Please add the desired URL of your installation in \'settings.php\'');
 		}
+		$this->get_posts();
 	}
 	
 	/**
@@ -102,6 +103,16 @@ class Yaff {
 			}
 		}
 		$y['theme_url'] = $y['base_url'] . 'themes/' . $y['theme'];
+	}
+
+	/**
+	 * Adds the ability to loop through 'posts'. Needs to be completed.
+	 *
+	 * @since 0.1.1
+	 */
+	public function get_posts() {
+		global $y;
+		$y['posts'] = glob(POSTS_DIR . "*.md");
 	}
 	
 }
