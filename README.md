@@ -6,7 +6,7 @@ YaffCMS (yet another flat file CMS) is a crazily small, stupidly fast flat file 
 Documentation
 -------------
 
-##Creating Pages
+###Creating Pages
 
 Each `.md` file within the 'content' directory is treated as a seperate page. If, for example, your website is located at `http://example.com`, `pages/products.md` can be accessed at `http://example.com/products` and `pages/index.md` can be accessed at `http://example.com`. URLs can be extended by creating subfolders, e.g. `pages/category/product.md` can be accessed at `http://example.com/category/product`.
 
@@ -20,7 +20,7 @@ A list of examples is shown below:
 
 If a file cannot be found, `pages/404.md` is displayed.
 
-##Page Markup
+###Page Markup
 
 All `.md` files are marked up using [Markdown](http://daringfireball.net/projects/markdown/syntax) and therefore can also contain HTML.
 
@@ -35,7 +35,7 @@ Page Template: fullwidth
 
 These values are added to the `$y` array (detailed below) and can be accessed from within the `.php` and `.md` files.
 
-##$y
+###$y
 
 The `$y` variable is an array of values used throughout YaffCMS. These values can be used within any theme file. A selection of available values are shown below:
 
@@ -51,7 +51,7 @@ Custom values can be added in the `settings.php` file in the root directory of y
 
 **All of these values (except for 'page\_content') can be accessed from within any `.md` file; just enclose the name of the value within '&#37;' symbols, e.g. if you would like to access `$y['page_title']`, &#37;page\_title&#37; must be used. This same syntax can be used with any custom values.**
 
-##Themes
+###Themes
 
 A simple theming system is used to style pages in YaffCMS. The minimum requirements of a theme is to contain just one file, `default.php` (the default page template).
 
