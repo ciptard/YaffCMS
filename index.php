@@ -4,7 +4,8 @@
  * Define some constants.
  */
 define('ROOT_DIR', realpath(dirname(__FILE__)) . '/');
-define('PAGES_DIR', ROOT_DIR . 'pages/');
+define('CONTENT_DIR', ROOT_DIR . 'content/');
+define('POSTS_DIR', ROOT_DIR . CONTENT_DIR . 'posts/');
 define('INCLUDES_DIR', ROOT_DIR . 'includes/');
 define('THEMES_DIR', ROOT_DIR . 'themes/');
 

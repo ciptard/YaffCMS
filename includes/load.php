@@ -23,14 +23,14 @@ class Yaff {
 			if ($_SERVER['REQUEST_URI'] != $_SERVER['PHP_SELF'])
 				$url = trim(preg_replace('/' . str_replace('/', '\/', str_replace('index.php', '', $_SERVER['PHP_SELF'])) . '/', '', $_SERVER['REQUEST_URI'], 1), '/');
 
-			$file = ($url ? PAGES_DIR . $url : PAGES_DIR . 'index');
+			$file = ($url ? CONTENT_DIR . $url : CONTENT_DIR . 'index');
 
-			is_dir($file) ? $file = PAGES_DIR . $url . '/index.md' : $file .= '.md';
+			is_dir($file) ? $file = CONTENT_DIR . $url . '/index.md' : $file .= '.md';
 
 			if (file_exists($file)) {
 				$y['page_content'] = file_get_contents($file);
 			} else {
-				$y['page_content'] = file_get_contents(PAGES_DIR . '404.md');
+				$y['page_content'] = file_get_contents(CONTENT_DIR . '404.md');
 				header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 			}
 
