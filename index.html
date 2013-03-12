@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Yaffcms by dcgauld</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Yaffcms</h1>
+        <p>YaffCMS is a crazily small, stupidly fast flat file content management system.</p>
+
+        <p class="view"><a href="https://github.com/dcgauld/YaffCMS">View the Project on GitHub <small>dcgauld/YaffCMS</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/dcgauld/YaffCMS/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/dcgauld/YaffCMS/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/dcgauld/YaffCMS">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>YaffCMS</h1>
+
+<p>YaffCMS (yet another flat file CMS) is a crazily small, stupidly fast flat file content management system.</p>
+
+<h2>Documentation</h2>
+
+<h3>Creating Pages</h3>
+
+<p>Each <code>.md</code> file within the 'content' directory is treated as a seperate page. If, for example, your website is located at <code>http://example.com</code>, <code>pages/products.md</code> can be accessed at <code>http://example.com/products</code> and <code>pages/index.md</code> can be accessed at <code>http://example.com</code>. URLs can be extended by creating subfolders, e.g. <code>pages/category/product.md</code> can be accessed at <code>http://example.com/category/product</code>.</p>
+
+<p>A list of examples is shown below:</p>
+
+<ul>
+<li>
+<code>pages/index.md</code> --&gt; <code>http://example.com</code>
+</li>
+<li>
+<code>pages/page.md</code> --&gt; <code>http://example.com/page</code>
+</li>
+<li>
+<code>pages/sub/index.md</code> --&gt; <code>http://example.com/sub</code> (same as above)</li>
+<li>
+<code>pages/sub/page.md</code> --&gt; <code>http://example.com/sub/page</code>
+</li>
+<li>
+<code>pages/a/stupid/amount.md</code> --&gt; <code>http://example.com/a/stupid/amount</code>
+</li>
+</ul><p>If a file cannot be found, <code>pages/404.md</code> is displayed.</p>
+
+<h3>Page Markup</h3>
+
+<p>All <code>.md</code> files are marked up using <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> and therefore can also contain HTML.</p>
+
+<p>Meta can be applied to each page by adding a block comment at the top of the <code>.md</code> file. A 'Page Title' can be added to add the name of the page in the browser's title bar, and 'Page Template' can be used to determine a specific theme file to use. An example of a page's meta is shown below:</p>
+
+<div class="highlight"><pre><span class="o">&lt;!--</span>
+<span class="nx">Page</span> <span class="nx">Title</span><span class="o">:</span> <span class="nx">Example</span> <span class="nx">page</span>
+<span class="nx">Page</span> <span class="nx">Template</span><span class="o">:</span> <span class="nx">fullwidth</span>
+<span class="o">--&gt;</span>
+</pre></div>
+
+<p>These values are added to the <code>$y</code> array (detailed below) and can be accessed from within the <code>.php</code> and <code>.md</code> files.</p>
+
+<h3>$y</h3>
+
+<p>The <code>$y</code> variable is an array of values used throughout YaffCMS. These values can be used within any theme file. A selection of available values are shown below:</p>
+
+<ul>
+<li>
+<code>$y['site_title']</code> - The title of your installation.</li>
+<li>
+<code>$y['base_url']</code> - The URL of your installation.</li>
+<li>
+<code>$y['theme']</code> - The name (slug) of the current theme.</li>
+<li>
+<code>$y['theme_url']</code> - The URL of the current theme.</li>
+<li>
+<code>$y['page_title']</code> - The current page's title.</li>
+<li>
+<code>$y['page_template']</code> - The current page's template.</li>
+<li>
+<code>$y['page_content']</code> - The current page's content.</li>
+</ul><p>Custom values can be added in the <code>settings.php</code> file in the root directory of your installation.</p>
+
+<p><strong>All of these values (except for 'page_content') can be accessed from within any <code>.md</code> file; just enclose the name of the value within '%' symbols, e.g. if you would like to access <code>$y['page_title']</code>, %page_title% must be used. This same syntax can be used with any custom values.</strong></p>
+
+<h3>Themes</h3>
+
+<p>A simple theming system is used to style pages in YaffCMS. The minimum requirements of a theme is to contain just one file, <code>default.php</code> (the default page template).</p>
+
+<p>Page templates can be easily added to a theme by creating a new <code>.php</code> file. If a new file called <code>product.php</code> is added, the 'Page Template' meta value (within a <code>.md</code> file) will need to have the value of <code>product</code> to be used.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/dcgauld">dcgauld</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
